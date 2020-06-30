@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
-  up: function (queryInterface, Sequelize) {
-    return queryInterface.createTable('Cities', {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.createTable('Cities', {
       id: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
@@ -23,7 +23,7 @@ module.exports = {
       }
     });
   },
-  down: function (queryInterface) {
-    return queryInterface.dropTable('Cities')
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.dropTable('Cities');
   }
 };
