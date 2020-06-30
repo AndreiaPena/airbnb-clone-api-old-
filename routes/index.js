@@ -5,6 +5,7 @@ const apiRouter = require('./signup');
 // const promosRoutes = require("./promos.routes");
 const router = express.Router();
 
+
 router.use(bodyParser.json());
 
 
@@ -12,7 +13,6 @@ router.use(bodyParser.json());
 router.get("/", (request, response) => {
     response.json({ message: "Hello, World :) !" });
   });
-  
 
 router.use("/api", apiRouter);
 

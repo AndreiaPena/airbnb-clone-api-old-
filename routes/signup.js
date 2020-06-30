@@ -1,19 +1,17 @@
 const express = require("express");
-const router = express.Router();
+const apiRouter = express.Router();
 const bodyParser = require("body-parser");
+const userController = require("../controllers/userController");
 
-router.use(bodyParser.json());
+apiRouter.use(bodyParser.urlencoded({ extended: true }));
+apiRouter.use(bodyParser.json());
 
-router.get("/signup", (request, response) => {
+apiRouter.get("/signup", (request, response) => {
     response.json({ 
       message: "signup"
     } );
   });
 
-  router.post("/signup", (request, response) => {
-    response.json({ 
-      message: "signup"
-    } );
-  });
-  module.exports = router;
+  apiRouter.post("/signup", userController.signup );
   
+  module.exports = apiRouter;
