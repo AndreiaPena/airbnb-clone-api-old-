@@ -10,5 +10,10 @@ router.get("/signup", (request, response) => {
     } );
   });
 
+  router.post("/signup", (request, response) => {
+    response.json({ 
+      message: "signup"
+    } );
+  });
   module.exports = router;
   

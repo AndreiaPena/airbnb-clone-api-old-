@@ -13,7 +13,9 @@ router.get("/", (request, response) => {
     response.json({ message: "Hello, World :) !" });
   });
   
+
 router.use("/api", apiRouter);
+
 
 router.use("*", (request, response) => {
   response.status(404).json({
